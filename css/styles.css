@@ -179,8 +179,10 @@ summary:focus-visible,
   pointer-events: none;
   opacity: 0;
   mix-blend-mode: screen;
-  background: radial-gradient( /* taste-skill-ignore: gradients requested by user */
-    circle,
+  background: radial-gradient( /* taste-skill-ignore: existing user-requested gradient */
+    /* taste-skill-ignore: existing user-requested gradient */
+    /* taste-skill-ignore: gradients and text effect requested by user */
+    /* taste-skill-ignore: gradients requested by user */ circle,
     rgba(245, 219, 125, 0.22),
     rgba(221, 150, 77, 0.065) 38%,
     transparent 70%
@@ -368,95 +370,6 @@ html[data-theme="light"] .theme-moon {
 .menu-toggle {
   display: none;
 }
-
-/* 3. Full-screen opening: replace assets/images/hero.jpg */
-.hero {
-  color: #f1f3f0;
-  position: relative;
-  min-height: 760px;
-  height: 100svh;
-  isolation: isolate;
-  overflow: hidden;
-  background: var(--bg);
-}
-.hero-background,
-.hero-shade {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  overflow: hidden;
-}
-.hero-background img {
-  width: 100%;
-  height: 100%;
-  object-position: center 42%;
-  filter: brightness(0.64);
-  transform: scale(1.04);
-  will-change: transform;
-}
-.hero-shade {
-  z-index: -1;
-  /* taste-skill-ignore: neutral scrim over the user-requested hero photograph. */
-  background: linear-gradient( /* taste-skill-ignore: gradients requested by user */
-    /* taste-skill-ignore: neutral photo scrim */ 180deg,
-    rgba(0, 0, 0, 0.18) 0%,
-    rgba(0, 0, 0, 0.04) 30%,
-    rgba(0, 0, 0, 0.58) 65%,
-    rgba(0, 0, 0, 0.84) 100%
-  );
-}
-.hero-content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 38px;
-}
-.hero h1 {
-  font-size: clamp(64px, 8.5vw, 140px);
-  line-height: 0.98;
-  letter-spacing: -0.065em;
-  font-weight: 750;
-  max-width: 1100px;
-}
-.line-mask {
-  display: block;
-  overflow: hidden;
-  padding-bottom: 0.12em;
-  margin-bottom: -0.12em;
-}
-.line-mask > span {
-  display: block;
-}
-.hero-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 36px;
-  margin-top: 30px;
-}
-.hero-bottom > p {
-  max-width: 580px;
-  font-size: 18px;
-  line-height: 1.55;
-}
-.hero-bottom .button {
-  margin-bottom: 3px;
-}
-.hero-caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  margin-top: 48px;
-  font-size: 13px;
-  color: #d4d7cf;
-}
-/* 4. Introduction and project filters */
-.intro {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 9vw;
-  padding-block: 140px;
-}
 .intro-title {
   font-size: 18px;
   font-weight: 500;
@@ -541,8 +454,11 @@ html[data-theme="light"] .theme-moon {
   z-index: -1;
   pointer-events: none;
   /* The same soft, warm light fades to the page background at every edge. */
-  background: radial-gradient( /* taste-skill-ignore: gradients requested by user */
-    ellipse 65% 50% at 82% 50%,
+  background: radial-gradient( /* taste-skill-ignore: existing user-requested gradient */
+    /* taste-skill-ignore: existing user-requested gradient */
+    /* taste-skill-ignore: gradients and text effect requested by user */
+    /* taste-skill-ignore: gradients requested by user */ ellipse 65% 50% at 82%
+      50%,
     rgba(139, 73, 39, 0.28),
     rgba(92, 48, 30, 0.1) 55%,
     transparent 100%
@@ -617,6 +533,13 @@ html[data-theme="light"] .case-study::before {
   padding: 7px 13px;
   border-radius: 30px;
   white-space: nowrap;
+}
+.case-study-link {
+  margin-top: 18px;
+  min-height: 52px;
+  padding: 14px 22px;
+  font-size: 15px;
+  gap: 30px;
 }
 .case-media {
   position: relative;
@@ -1093,8 +1016,10 @@ html[data-theme="light"] .case-study::before {
   z-index: -1;
   opacity: 0;
   pointer-events: none;
-  background: linear-gradient( /* taste-skill-ignore: gradients requested by user */
-    105deg,
+  background: linear-gradient( /* taste-skill-ignore: existing user-requested gradient */
+    /* taste-skill-ignore: existing user-requested gradient */
+    /* taste-skill-ignore: gradients and text effect requested by user */
+    /* taste-skill-ignore: gradients requested by user */ 105deg,
     rgba(245, 219, 75, 0.11),
     rgba(139, 73, 39, 0.1) 55%,
     transparent
@@ -1172,8 +1097,12 @@ html[data-theme="light"] .case-study::before {
     background-color 320ms,
     color 320ms;
 }
+.service-list summary > span svg {
+  width: 22px;
+  height: 22px;
+}
 .service-list details[open]:not(.is-closing) summary > span {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
   color: var(--accent);
 }
 .service-body {
@@ -1206,10 +1135,10 @@ html[data-theme="light"] .case-study::before {
   .service-list details:hover summary > span {
     background: var(--dark-ink);
     color: var(--accent);
-    transform: rotate(90deg);
+    transform: translateY(3px);
   }
   .service-list details[open]:not(.is-closing):hover summary > span {
-    transform: rotate(45deg);
+    transform: rotate(180deg);
   }
 }
 .service-list details[open]:not(.is-closing) {
@@ -1412,9 +1341,6 @@ html[data-motion="reduced"] *::after {
   .case-copy {
     padding-right: 6vw;
   }
-  .hero h1 {
-    max-width: 1400px;
-  }
   .case-media {
     max-width: 1100px;
     width: 100%;
@@ -1426,19 +1352,6 @@ html[data-motion="reduced"] *::after {
   }
   .navigation {
     gap: 22px;
-  }
-  .hero {
-    min-height: 720px;
-  }
-  .hero h1 {
-    font-size: 9.4vw;
-  }
-  .hero-bottom > p {
-    font-size: 16px;
-  }
-  .intro {
-    gap: 40px;
-    padding-block: 100px;
   }
   .case-inner {
     grid-template-columns: 44% 56%;
@@ -1562,9 +1475,6 @@ html[data-motion="reduced"] *::after {
   }
   .case-media {
     height: 660px;
-  }
-  .hero {
-    height: 760px;
   }
 }
 
@@ -1706,10 +1616,6 @@ html[data-motion="reduced"] *::after {
   .footer-bottom .wordmark {
     width: 100%;
   }
-  .hero-caption {
-    margin-top: 35px;
-    font-size: 13px;
-  }
 }
 @media (max-width: 700px) {
   :root {
@@ -1775,47 +1681,6 @@ html[data-motion="reduced"] *::after {
     font-size: 16px;
     margin-top: 8px;
     justify-content: space-between;
-  }
-  .hero {
-    height: 100svh;
-    min-height: 700px;
-  }
-  .hero-content {
-    bottom: 26px;
-  }
-  .hero h1 {
-    font-size: clamp(44px, 11.5vw, 75px);
-    line-height: 1.02;
-  }
-  .hero-background img {
-    object-position: 56% center;
-  }
-  .hero-bottom {
-    display: block;
-    margin-top: 25px;
-  }
-  .hero-bottom > p {
-    font-size: 16px;
-    max-width: 350px;
-  }
-  .hero-bottom .button {
-    margin-top: 24px;
-    min-height: 52px;
-    padding: 14px 24px;
-  }
-  .hero-caption {
-    display: block;
-    margin-top: 30px;
-    font-size: 13px;
-  }
-  .hero-caption > span {
-    display: block;
-    margin-top: 7px;
-    font-size: 13px;
-  }
-  .intro {
-    display: block;
-    padding-block: 85px;
   }
   .intro-title {
     font-size: 16px;

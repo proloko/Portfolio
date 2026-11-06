@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient
+      id="silk"
+      x1="100"
+      y1="800"
+      x2="1400"
+      y2="100"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#242b0f" />
+      <stop offset=".47" stop-color="#f5db4b" />
+      <stop offset="1" stop-color="#3a4016" />
+    </linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="28" /></filter>
+  </defs>
+  <path
+    d="M-300 800C300 1200 450-350 1200 50S1700 850 1950 400"
+    stroke="url(#silk)"
+    stroke-width="170"
+    filter="url(#soft)"
+    opacity=".6"
+  />
+  <path
+    d="M-300 800C300 1200 450-350 1200 50S1700 850 1950 400"
+    stroke="url(#silk)"
+    stroke-width="3"
+    opacity=".8"
+  />
+</svg>

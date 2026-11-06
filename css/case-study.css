@@ -1,0 +1,510 @@
+/* Standalone case studies reuse the portfolio's tokens, artwork and grid. */
+.reading-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 3px;
+  z-index: 110;
+  background: var(--accent);
+  transform: scaleX(var(--reading-progress, 0));
+  transform-origin: left;
+  pointer-events: none;
+}
+.case-header {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: var(--bg);
+}
+.case-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  min-height: 104px;
+}
+.case-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  min-height: 44px;
+  margin-right: 12px;
+}
+.case-back > span:first-child {
+  font-size: 24px;
+}
+.case-back:hover {
+  color: var(--accent-ink);
+}
+.case-introduction {
+  padding-top: 78px;
+  padding-bottom: 58px;
+}
+.case-demo {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.case-heading {
+  display: grid;
+  grid-template-columns: var(--grid-columns);
+  gap: var(--grid-gap);
+  align-items: end;
+}
+.case-heading h1 {
+  grid-column: 1 / span 7;
+  font-size: clamp(64px, 8vw, 128px);
+  line-height: 1;
+  font-weight: 650;
+}
+.case-heading > p {
+  grid-column: 9 / -1;
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 340px;
+}
+.case-metadata {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  margin: 48px 0 0;
+  padding: 28px;
+  background: var(--surface);
+}
+.case-metadata dt {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.case-metadata dd {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.case-cover {
+  position: relative;
+  height: clamp(400px, 54vw, 760px);
+  overflow: hidden;
+}
+.case-cover > .project-visual {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+.case-cover--flow {
+  display: grid;
+  place-items: center;
+  background: #b8d0c2;
+  height: clamp(520px, 60vw, 760px);
+}
+.case-cover--flow > .project-flow {
+  width: min(340px, 72%);
+  height: 88%;
+  border-radius: 40px;
+}
+.case-cover .forma-poster strong {
+  font-size: clamp(52px, 9vw, 150px);
+}
+.case-cover .forma-card strong {
+  font-size: clamp(50px, 6vw, 100px);
+}
+.case-cover .forma-card > span {
+  display: block;
+}
+.case-cover .flow-interface {
+  padding: clamp(32px, 3vw, 42px) clamp(16px, 1.5vw, 22px) 24px;
+  gap: clamp(16px, 2vw, 25px);
+}
+.case-cover .phone-heading {
+  font-size: clamp(24px, 2.4vw, 34px);
+}
+.case-cover .flow-circle {
+  margin-block: 6px;
+  font-size: clamp(54px, 6vw, 90px);
+}
+.case-cover .magazine > strong {
+  font-size: clamp(20px, 4vw, 60px);
+}
+.case-cover .browser-window {
+  container-type: inline-size;
+}
+.case-cover .browser-content {
+  width: 100%;
+  padding: 8% 6%;
+}
+.case-cover .browser-content > strong {
+  font-size: clamp(24px, 8cqi, 80px);
+}
+.case-cover .orbit-art {
+  font-size: clamp(180px, 40vw, 620px);
+}
+.case-cover-note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.case-text-section {
+  display: grid;
+  grid-template-columns: var(--grid-columns);
+  gap: var(--grid-gap);
+  padding-block: 100px;
+}
+.case-text-section > h2 {
+  grid-column: 1 / span 3;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.case-narrative {
+  grid-column: 5 / -1;
+  max-width: 850px;
+}
+.case-narrative .case-lead {
+  font-size: clamp(24px, 2.6vw, 38px);
+  letter-spacing: -0.035em;
+  line-height: 1.35;
+  margin-bottom: 28px;
+}
+.case-narrative > p {
+  margin-top: 20px;
+  max-width: 740px;
+}
+.case-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+.case-gallery figure {
+  margin: 0;
+  min-width: 0;
+}
+.case-image > img {
+  width: 100%;
+  height: clamp(360px, 42vw, 660px);
+}
+.case-gallery figcaption {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.case-board {
+  min-height: clamp(360px, 42vw, 660px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: clamp(28px, 4vw, 64px);
+  color: #11130d;
+}
+.case-board > strong {
+  font-size: clamp(44px, 5.8vw, 88px);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+  font-weight: 650;
+}
+.case-board > p {
+  max-width: 330px;
+  font-size: 18px;
+}
+.case-board--brand {
+  background: var(--accent);
+}
+.case-board--flow {
+  background: #b8d0c2;
+  color: #183425;
+}
+.case-board--flow-alt {
+  background: #edf1e6;
+  color: #183425;
+}
+.case-board--editorial {
+  background: #e4e5dd;
+  color: #171a17;
+}
+.case-board--orbit {
+  background: #9cb7d8;
+  color: #15202c;
+}
+.case-board--orbit-alt {
+  background: #eef0ec;
+  color: #15202c;
+}
+.case-principles {
+  display: grid;
+  grid-template-columns: var(--grid-columns);
+  gap: var(--grid-gap);
+  padding-bottom: 100px;
+}
+.case-principles > article {
+  grid-column: span 4;
+  padding-top: 24px;
+}
+.case-principles h3 {
+  font-size: clamp(26px, 2.5vw, 38px);
+  line-height: 1.12;
+  margin-bottom: 22px;
+}
+.case-principles p {
+  max-width: 390px;
+}
+.case-next {
+  display: grid;
+  grid-template-columns: var(--grid-columns);
+  column-gap: var(--grid-gap);
+  row-gap: 24px;
+  align-items: center;
+  padding-block: 48px 80px;
+}
+.case-next > span:first-child {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 15px;
+}
+.case-next > strong {
+  grid-column: 1 / span 10;
+  font-size: clamp(48px, 7vw, 110px);
+  letter-spacing: -0.06em;
+  line-height: 1.06;
+  font-weight: 600;
+}
+.case-next > span:last-child {
+  grid-column: 12;
+  justify-self: end;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--dark-ink);
+  font-size: 32px;
+  transition: transform 250ms;
+}
+.case-next:hover > span:last-child {
+  transform: translate(4px, -4px);
+}
+.case-contact {
+  background: var(--accent);
+  color: var(--dark-ink);
+  padding-block: 70px;
+  border-radius: 48px 48px 0 0;
+}
+.case-contact .section-frame {
+  display: grid;
+  grid-template-columns: var(--grid-columns);
+  gap: 32px;
+  align-items: end;
+}
+.case-contact h2 {
+  grid-column: 1 / span 8;
+  font-size: clamp(38px, 4.7vw, 72px);
+}
+.case-contact .button {
+  grid-column: 10 / -1;
+  justify-self: end;
+  background: var(--dark-ink);
+  color: var(--accent);
+}
+.case-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-block: 30px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.case-footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 1050px) {
+  .case-heading h1 {
+    grid-column: 1 / span 8;
+  }
+  .case-heading > p {
+    grid-column: 9 / -1;
+    font-size: 16px;
+  }
+  .case-metadata {
+    gap: 22px;
+    padding: 24px;
+  }
+  .case-contact .button {
+    grid-column: 9 / -1;
+  }
+  .case-contact h2 {
+    grid-column: 1 / span 7;
+  }
+}
+@media (max-width: 800px) {
+  .case-header-inner {
+    min-height: 90px;
+  }
+  .case-header .wordmark {
+    font-size: 24px;
+  }
+  .case-back {
+    font-size: 14px;
+  }
+  .case-heading h1,
+  .case-heading > p,
+  .case-text-section > h2,
+  .case-narrative,
+  .case-next > strong,
+  .case-contact h2,
+  .case-contact .button {
+    grid-column: 1 / -1;
+  }
+  .case-introduction {
+    padding-top: 52px;
+    padding-bottom: 36px;
+  }
+  .case-heading h1 {
+    font-size: clamp(42px, 9vw, 80px);
+  }
+  .case-heading > p {
+    max-width: 460px;
+  }
+  .case-metadata {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 32px;
+  }
+  .case-text-section {
+    row-gap: 28px;
+    padding-block: 72px;
+  }
+  .case-text-section > h2 {
+    font-size: 18px;
+  }
+  .case-narrative .case-lead {
+    font-size: 26px;
+  }
+  .case-gallery {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+  }
+  .case-image > img,
+  .case-board {
+    min-height: 360px;
+    height: auto;
+  }
+  .case-image > img {
+    aspect-ratio: 1;
+  }
+  .case-principles {
+    padding-bottom: 72px;
+    row-gap: 34px;
+  }
+  .case-principles > article {
+    grid-column: 1 / -1;
+    padding-top: 0;
+  }
+  .case-principles h3 {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .case-next > strong {
+    grid-column: 1 / span 3;
+    font-size: clamp(28px, 5.5vw, 48px);
+  }
+  .case-next > span:last-child {
+    grid-column: 4;
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+  }
+  .case-contact {
+    padding-block: 50px;
+    border-radius: 30px 30px 0 0;
+  }
+  .case-contact .button {
+    justify-self: start;
+  }
+}
+@media (max-width: 700px) {
+  .case-header .wordmark {
+    font-size: 20px;
+  }
+  .case-back {
+    width: 44px;
+    justify-content: center;
+  }
+  .case-back > span:last-child {
+    display: none;
+  }
+  .case-metadata {
+    padding: 20px;
+    gap: 22px 16px;
+  }
+  .case-metadata dd {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+  .case-cover {
+    height: 380px;
+  }
+  .case-cover--flow {
+    height: 520px;
+  }
+  .case-cover .forma-poster strong {
+    font-size: 9vw;
+  }
+  .case-cover .forma-card strong {
+    font-size: 44px;
+  }
+  .case-cover .forma-card > span {
+    display: none;
+  }
+  .case-cover .magazine > strong {
+    font-size: 18px;
+  }
+  .case-cover .magazine > span {
+    font-size: 13px;
+  }
+  .case-cover .browser-content > strong {
+    font-size: 9cqi;
+  }
+  .case-cover .browser-bar > span {
+    display: none;
+  }
+  .case-narrative .case-lead {
+    font-size: 24px;
+  }
+  .case-board {
+    padding: 28px;
+  }
+  .case-board > strong {
+    font-size: clamp(34px, 9vw, 52px);
+  }
+  .case-board > p {
+    font-size: 16px;
+  }
+  .case-next {
+    padding-bottom: 60px;
+  }
+  .case-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+@media (max-width: 380px) {
+  .case-header .wordmark {
+    font-size: 17px;
+  }
+  .case-heading h1 {
+    font-size: 10vw;
+  }
+  .case-metadata {
+    grid-template-columns: 1fr;
+  }
+  .case-cover .forma-card {
+    padding: 8%;
+  }
+  .case-next > strong {
+    font-size: 24px;
+  }
+}

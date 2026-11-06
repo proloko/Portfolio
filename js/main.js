@@ -60,19 +60,20 @@ themeToggle.addEventListener("click", () => {
     /* The current selection still applies. */
   }
   updateThemeControl();
+  requestSceneUpdate();
 });
 updateThemeControl();
 
 /* Filters retain the large project scenes in normal document order. */
 const projectCards = [...document.querySelectorAll(".case-study")];
+const workIntro = document.querySelector(".work-intro");
+let workIntroRevealed = false;
 const projectNavigation = document.querySelector(".project-navigation");
 const previousProject = document.querySelector("#previous-project");
 const nextProject = document.querySelector("#next-project");
 let navigationTarget = null;
 let currentStopIndex = 0;
-const precedingSections = [
-  ...document.querySelectorAll(".hero, .intro, .work-header"),
-];
+const precedingSections = [...document.querySelectorAll(".hero, .work-intro")];
 const followingSections = [
   ...document.querySelectorAll("#specjalizacje, #o-mnie, #kontakt"),
 ];
@@ -84,7 +85,9 @@ function navigationLabel(target, direction) {
   if (!target) return direction < 0 ? "Poprzednia sekcja" : "Następna sekcja";
   const project = target.classList.contains("case-study");
   const name = target
-    .querySelector(project ? "h3" : "h1, h2")
+    .querySelector(
+      project ? "h3" : target === workIntro ? "#work-title" : "h1, h2",
+    )
     .innerText.replace(/\s+/g, " ")
     .trim();
   const action = project
@@ -144,8 +147,11 @@ function navigateProject(direction) {
     : currentStopIndex;
   const target = stops[base + direction];
   if (!target) return;
+  scrollToStop(target);
+}
+function scrollToStop(target) {
   navigationTarget = target;
-  updateProjectNavigation(visible);
+  updateProjectNavigation(projectCards.filter((card) => !card.hidden));
   window.scrollTo({
     top: target.getBoundingClientRect().top + window.scrollY,
     behavior: motionEnabled ? "smooth" : "instant",
@@ -191,6 +197,14 @@ document.querySelectorAll("[data-filter]").forEach((button) => {
     navigationTarget = null;
     updateProjectNumbers();
     requestSceneUpdate();
+    const first = projectCards.find((card) => !card.hidden);
+    if (first) {
+      // Start after the filtered layout and any native anchor scroll settle.
+      requestAnimationFrame(() => {
+        first.querySelector("h3").focus({ preventScroll: true });
+        scrollToStop(first);
+      });
+    }
   });
 });
 
@@ -299,18 +313,33 @@ function requestSceneUpdate() {
   frameRequested = true;
   requestAnimationFrame(updateScenes);
 }
+/* One entry gesture starts the complete one-second palette change. */
+function updateWorkIntro(height) {
+  const top = workIntro.getBoundingClientRect().top;
+  const ready = workIntro.classList.contains("is-palette-ready");
+  const forcedLight =
+    document.documentElement.dataset.theme === "light" || !motionEnabled;
+  let revealed = workIntroRevealed;
+  if (forcedLight) revealed = true;
+  else if (top <= height - 16) revealed = true;
+  else if (top >= height - 4) revealed = false;
+  // A small hysteresis prevents repeated restarts at the viewport edge.
+  if (ready && revealed === workIntroRevealed) return;
+  workIntroRevealed = revealed;
+  workIntro.classList.toggle("is-revealed", revealed);
+  if (!ready) {
+    // Commit the initial palette before enabling fades, including restored scroll positions.
+    void workIntro.offsetWidth;
+    workIntro.classList.add("is-palette-ready");
+  }
+}
 function updateScenes() {
   frameRequested = false;
   const height = window.innerHeight;
+  updateWorkIntro(height);
   const desktop = window.innerWidth > 800;
   const visible = projectCards.filter((card) => !card.hidden);
   updateProjectNavigation(visible);
-  const heroImage = document.querySelector(".hero-background img");
-  const hero = document.querySelector(".hero");
-  const heroY = Math.min(Math.max(window.scrollY, 0), hero.offsetHeight);
-  heroImage.style.transform = motionEnabled
-    ? "translate3d(0," + heroY * 0.16 + "px,0) scale(1.04)"
-    : "scale(1.04)";
   visible.forEach((card) => {
     const rect = card.getBoundingClientRect();
     if (rect.bottom < -100 || rect.top > height + 100) return;
@@ -436,6 +465,20 @@ if (siteConfig.socialLinks.length) {
   socials.className = "contact-socials";
   siteConfig.socialLinks.forEach(({ label, url }) => {
     if (!url.startsWith("https://")) return;
+    const icon = [...document.querySelectorAll("[data-social]")].find(
+      (item) => item.dataset.social === label.toLowerCase(),
+    );
+    if (icon) {
+      const profile = document.createElement("a");
+      profile.className = icon.className;
+      profile.href = url;
+      profile.target = "_blank";
+      profile.rel = "noopener noreferrer";
+      profile.setAttribute("aria-label", label + " — otwórz profil");
+      profile.title = label;
+      profile.append(...icon.childNodes);
+      icon.replaceWith(profile);
+    }
     const link = document.createElement("a");
     link.href = url;
     link.textContent = label;
