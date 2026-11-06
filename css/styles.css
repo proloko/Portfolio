@@ -365,6 +365,7 @@ html[data-theme="light"] .theme-moon {
   color: var(--dark-ink);
 }
 .navigation .nav-contact:hover {
+  color: var(--dark-ink);
   transform: translateY(-3px);
 }
 .menu-toggle {

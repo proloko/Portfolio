@@ -1,0 +1,73 @@
+/* The content frame remains unchanged; only its fixed backdrop spans the viewport. */
+.header {
+  position: fixed;
+  z-index: 95;
+  isolation: isolate;
+  transform: translateY(0);
+  transition: transform 420ms var(--ease), color 220ms;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: calc(100% + 52px);
+  transform: translateX(calc(-50% + var(--navigation-space) / 2));
+  background: rgb(16 17 16 / 86%);
+  -webkit-backdrop-filter: blur(20px); /* taste-skill-ignore: one blurred navigation layer requested by user */
+  backdrop-filter: blur(20px); /* taste-skill-ignore: one blurred navigation layer requested by user */
+  -webkit-mask-image: linear-gradient( /* taste-skill-ignore: user-requested fading blurred menu layer */
+    #000 60%,
+    transparent
+  ); /* taste-skill-ignore: user-requested fading blurred menu layer */
+  mask-image: linear-gradient( /* taste-skill-ignore: user-requested fading blurred menu layer */
+    #000 60%,
+    transparent
+  ); /* taste-skill-ignore: user-requested fading blurred menu layer */
+  opacity: 1;
+  transition: opacity 300ms, background-color 220ms;
+}
+html[data-theme="light"] .header::before {
+  background: rgb(255 255 255 / 88%);
+}
+/* Only the white portfolio introduction overrides the header's local palette. */
+.header.is-over-light-intro {
+  --ink: #171a17;
+  --accent-ink: #806a00;
+  color: var(--ink);
+}
+.header.is-over-light-intro::before {
+  background: rgb(255 255 255 / 88%);
+}
+.header.is-over-light-intro .navigation > a:not(.nav-contact):hover {
+  color: var(--accent-ink);
+}
+.header.is-at-top:not(:has(.navigation.is-open))::before {
+  opacity: 0;
+}
+.header.is-hidden {
+  transform: translateY(calc(-100% - 56px));
+  pointer-events: none;
+}
+/* Keep the action label dark on its yellow surface in every navigation state. */
+.navigation .nav-contact:hover,
+.navigation .nav-contact:focus-visible {
+  color: var(--dark-ink);
+  background: var(--accent);
+}
+@media (max-width: 1050px) {
+  .header .navigation {
+    background: rgb(16 17 16 / 96%);
+    -webkit-backdrop-filter: blur(20px); /* taste-skill-ignore: mobile extension of the same navigation layer */
+    backdrop-filter: blur(20px); /* taste-skill-ignore: mobile extension of the same navigation layer */
+  }
+  html[data-theme="light"] .header .navigation {
+    background: rgb(255 255 255 / 96%);
+  }
+  .header.is-over-light-intro .navigation {
+    background: rgb(255 255 255 / 96%);
+  }
+}

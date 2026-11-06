@@ -21,7 +21,12 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/hero.css" />
     <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/clients.css" />
+    <link rel="stylesheet" href="css/editorial.css" />
+    <link rel="stylesheet" href="css/process.css" />
+    <link rel="stylesheet" href="css/header.css" />
     <script src="js/main.js" defer></script>
+    <script src="js/clients.js" defer></script>
     <script src="js/hero.js" defer></script>
   </head>
   <body id="top">
@@ -210,6 +215,62 @@
           </div>
         </div>
       </section>
+      <section
+        class="about-editorial section-frame"
+        id="o-mnie"
+        aria-labelledby="about-title"
+      >
+        <aside class="about-aside">
+          <p>O mnie</p>
+          <p>Projektowanie graficzne, UX/UI, DTP i marketing.</p>
+        </aside>
+        <div class="about-display">
+          <svg
+            class="about-symbol"
+            viewBox="0 0 80 80"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M40 5V75M5 40H75M15 15L65 65M15 65L65 15"
+              stroke="currentColor"
+              stroke-width="5"
+            />
+          </svg>
+          <h2 id="about-title">Design<br />i digital.</h2>
+        </div>
+        <div class="about-narrative">
+          <p>
+            Łączę projektowanie graficzne, doświadczenia cyfrowe i marketing.
+            Patrzę na cały obraz: od tego, jak marka wygląda, po to, jak działa
+            jej produkt i jak dociera do ludzi.
+          </p>
+          <p>
+            Interesują mnie spójne rozwiązania. Takie, w których identyfikacja,
+            interfejs i komunikacja wynikają z jednego pomysłu, a każdy kolejny
+            element ma swoje miejsce.
+          </p>
+          <a class="text-link" href="#kontakt"
+            >Poznajmy Twój projekt <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="about-areas">
+          <article>
+            <h3>Marka</h3>
+            <p>Język wizualny, który łączy różne punkty kontaktu.</p>
+          </article>
+          <article>
+            <h3>Produkt</h3>
+            <p>
+              Interfejsy stron i aplikacji z czytelnym kierunkiem działania.
+            </p>
+          </article>
+          <article>
+            <h3>Komunikacja</h3>
+            <p>Grafika, publikacje i kampanie tworzące spójną całość.</p>
+          </article>
+        </div>
+      </section>
       <section class="work" id="projekty" aria-labelledby="work-title">
         <div class="work-intro" id="pomysl">
           <div class="intro-inner section-frame">
@@ -297,36 +358,42 @@
                   >Pełne case study <span aria-hidden="true">↗</span></a
                 >
               </div>
-              <div class="case-media" aria-label="Materiały projektu Forma">
+              <div
+                class="case-media media-triptych"
+                aria-label="Trzy niezależne materiały projektu Dom"
+              >
                 <div class="case-fragment fragment-top" data-parallax="0.55">
-                  <span class="fragment-forma-photo"
-                    ><img
-                      src="assets/images/architecture.jpg"
-                      alt="Architektura w demonstracyjnej komunikacji marki Forma"
-                      width="1600"
-                      height="1100"
-                      loading="lazy"
-                  /></span>
+                  <img
+                    src="assets/images/architecture.jpg"
+                    alt="Dom: materiał uzupełniający"
+                    width="500"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
                 </div>
                 <div class="case-main" data-parallax="-0.25">
-                  <div
-                    class="project-visual project-forma"
-                    role="img"
-                    aria-label="Makieta projektu Forma – identyfikacja wizualna"
-                  >
-                    <span class="forma-poster"
-                      ><strong>forma®</strong
-                      ><span>Dobrze się składa.</span></span
-                    ><span class="forma-card"
-                      ><strong>f.</strong
-                      ><span>Przestrzeń dla pomysłów.</span></span
-                    >
-                  </div>
+                  <img
+                    src="assets/projects/dom-main.svg"
+                    alt="Dom: główna prezentacja"
+                    width="1200"
+                    height="840"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
                 </div>
                 <div class="case-fragment fragment-bottom" data-parallax="0.85">
-                  <span class="fragment-forma-card"
-                    ><b>f.</b><span>Przestrzeń<br />dla pomysłów.</span></span
-                  >
+                  <img
+                    src="assets/projects/dom-detail.svg"
+                    alt="Dom: detal projektu"
+                    width="500"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
                 </div>
               </div>
             </div>
@@ -369,39 +436,42 @@
                   >Pełne case study <span aria-hidden="true">↗</span></a
                 >
               </div>
-              <div class="case-media" aria-label="Materiały projektu Flow">
+              <div
+                class="case-media media-triptych"
+                aria-label="Trzy niezależne materiały projektu Flow"
+              >
                 <div class="case-fragment fragment-top" data-parallax="0.55">
-                  <span class="fragment-flow-day" data-ui
-                    ><span>Twój tydzień</span><strong>Dobry rytm.</strong
-                    ><span class="week-days"
-                      ><i>P</i><i>W</i><i>Ś</i><i>C</i><i>P</i></span
-                    ><span>Małe kroki, każdego dnia.</span></span
-                  >
+                  <img
+                    src="assets/projects/flow-week.svg"
+                    alt="Flow: materiał uzupełniający"
+                    width="500"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
                 </div>
                 <div class="case-main" data-parallax="-0.25">
-                  <div
-                    class="project-visual project-flow"
-                    role="img"
-                    aria-label="Makieta projektu Flow – UX/UI aplikacji mobilnej"
-                    data-ui
-                  >
-                    <span class="flow-interface" aria-hidden="true"
-                      ><span class="phone-top">flow <span>•</span></span
-                      ><span class="phone-heading"
-                        >Małe kroki.<br />Duża zmiana.</span
-                      ><span class="flow-circle"
-                        >7<span>dni dla siebie</span></span
-                      ><span class="flow-task"
-                        >Twój następny krok <b>→</b></span
-                      ></span
-                    >
-                  </div>
+                  <img
+                    src="assets/projects/flow-main.svg"
+                    alt="Flow: główna prezentacja"
+                    width="800"
+                    height="1100"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
                 </div>
                 <div class="case-fragment fragment-bottom" data-parallax="0.85">
-                  <span class="fragment-flow-goal" data-ui
-                    ><span>Chwila dla siebie</span><b>20 min</b
-                    ><span>Twój dzisiejszy cel</span></span
-                  >
+                  <img
+                    src="assets/projects/flow-focus.svg"
+                    alt="Flow: detal projektu"
+                    width="500"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
                 </div>
               </div>
             </div>
@@ -445,47 +515,41 @@
                 >
               </div>
               <div
-                class="case-media"
-                aria-label="Materiały projektu Perspektywy"
+                class="case-media media-triptych"
+                aria-label="Trzy niezależne materiały projektu Perspektywy"
               >
                 <div class="case-fragment fragment-top" data-parallax="0.55">
                   <img
                     src="assets/images/windows.jpg"
-                    alt="Fotografia otwierająca przykładowy artykuł"
-                    width="1600"
-                    height="1100"
+                    alt="Perspektywy: materiał uzupełniający"
+                    width="500"
+                    height="600"
                     loading="lazy"
+                    decoding="async"
+                    draggable="false"
                   />
                 </div>
                 <div class="case-main" data-parallax="-0.25">
-                  <div
-                    class="project-visual project-perspectives"
-                    role="img"
-                    aria-label="Makieta projektu Perspektywy – projekt magazynu"
-                  >
-                    <span class="magazine"
-                      ><img
-                        src="assets/images/concrete.jpg"
-                        alt="Spiralne betonowe schody w przykładowym magazynie"
-                        width="1600"
-                        height="1100"
-                        loading="lazy"
-                      /><strong>perspektywy</strong
-                      ><span>Architektura / Kultura / Ludzie</span></span
-                    ><span class="magazine-back"
-                      ><img
-                        src="assets/images/windows.jpg"
-                        alt="Sylwetki przy panoramicznych oknach"
-                        width="1600"
-                        height="1100"
-                        loading="lazy"
-                    /></span>
-                  </div>
+                  <img
+                    src="assets/projects/perspektywy-main.svg"
+                    alt="Perspektywy: główna prezentacja"
+                    width="1200"
+                    height="840"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
                 </div>
                 <div class="case-fragment fragment-bottom" data-parallax="0.85">
-                  <span class="fragment-editorial"
-                    ><b>Inny<br />kadr.</b><span>perspektywy</span></span
-                  >
+                  <img
+                    src="assets/projects/perspektywy-detail.svg"
+                    alt="Perspektywy: detal projektu"
+                    width="500"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
                 </div>
               </div>
             </div>
@@ -530,41 +594,204 @@
                   >Pełne case study <span aria-hidden="true">↗</span></a
                 >
               </div>
-              <div class="case-media" aria-label="Materiały projektu Orbit">
+              <div
+                class="case-media media-triptych"
+                aria-label="Trzy niezależne materiały projektu Orbit"
+              >
                 <div class="case-fragment fragment-top" data-parallax="0.55">
-                  <span class="fragment-orbit-ad"
-                    ><b>Na<br />orbitę.</b><span>orbit ↗</span></span
-                  >
+                  <img
+                    src="assets/projects/orbit-detail.svg"
+                    alt="Orbit: materiał uzupełniający"
+                    width="500"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
                 </div>
                 <div class="case-main" data-parallax="-0.25">
-                  <div
-                    class="project-visual project-orbit"
-                    role="img"
-                    aria-label="Makieta projektu Orbit – landing page i kampania"
-                    data-ui
-                  >
-                    <span class="browser-window" aria-hidden="true"
-                      ><span class="browser-bar"
-                        ><b>orbit</b
-                        ><span>Produkt　Możliwości　Zacznij</span></span
-                      ><span class="browser-content"
-                        ><strong>Mniej klikania.<br />Więcej działania.</strong
-                        ><span>Twoje pomysły. Jeden wspólny kierunek.</span
-                        ><span class="mini-button">Zacznij teraz ↗</span></span
-                      ><span class="orbit-art">o.</span></span
-                    >
-                  </div>
+                  <img
+                    src="assets/projects/orbit-main.svg"
+                    alt="Orbit: główna prezentacja"
+                    width="1200"
+                    height="840"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
                 </div>
                 <div class="case-fragment fragment-bottom" data-parallax="0.85">
-                  <span class="fragment-orbit-mobile" data-ui
-                    ><b>orbit</b><strong>Jeden<br />kierunek.</strong
-                    ><span>Zacznij teraz ↗</span></span
-                  >
+                  <img
+                    src="assets/projects/orbit-mobile.svg"
+                    alt="Orbit: detal projektu"
+                    width="500"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
                 </div>
               </div>
             </div>
           </article>
         </div>
+      </section>
+      <section
+        class="clients section-frame"
+        id="klienci"
+        aria-labelledby="clients-title"
+      >
+        <div class="clients-heading">
+          <div>
+            <p class="clients-label">Klienci</p>
+            <h2 id="clients-title">Razem tworzymy<br />więcej.</h2>
+          </div>
+          <div class="clients-navigation" hidden>
+            <button
+              type="button"
+              class="clients-arrow"
+              data-clients-previous
+              aria-label="Poprzedni klienci"
+              aria-controls="clients-track"
+              disabled
+            >
+              <span aria-hidden="true">←</span>
+            </button>
+            <button
+              type="button"
+              class="clients-arrow"
+              data-clients-next
+              aria-label="Kolejni klienci"
+              aria-controls="clients-track"
+            >
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+        <p class="clients-note" id="clients-note">
+          Marki i zespoły, z którymi miałem okazję współpracować.
+        </p>
+        <!-- Names supplied by the portfolio owner. Replace text with supplied logos when available. -->
+        <div
+          class="clients-track"
+          id="clients-track"
+          role="region"
+          aria-label="Lista klientów"
+          aria-describedby="clients-note"
+          tabindex="0"
+        >
+          <ul class="clients-list">
+            <li class="client-card">
+              <img
+                class="client-logo"
+                src="assets/clients/logo-placeholder.svg"
+                alt="Tymczasowe miejsce na logotyp: Budimex"
+                width="480"
+                height="160"
+                loading="lazy"
+                draggable="false"
+              />
+              <h3 class="client-name">Budimex</h3>
+            </li>
+            <li class="client-card">
+              <img
+                class="client-logo"
+                src="assets/clients/logo-placeholder.svg"
+                alt="Tymczasowe miejsce na logotyp: Uczelnia Vistula"
+                width="480"
+                height="160"
+                loading="lazy"
+                draggable="false"
+              />
+              <h3 class="client-name">Uczelnia Vistula</h3>
+            </li>
+            <li class="client-card">
+              <img
+                class="client-logo"
+                src="assets/clients/logo-placeholder.svg"
+                alt="Tymczasowe miejsce na logotyp: K2"
+                width="480"
+                height="160"
+                loading="lazy"
+                draggable="false"
+              />
+              <h3 class="client-name">K2</h3>
+            </li>
+            <li class="client-card">
+              <img
+                class="client-logo"
+                src="assets/clients/logo-placeholder.svg"
+                alt="Tymczasowe miejsce na logotyp: UBiNS"
+                width="480"
+                height="160"
+                loading="lazy"
+                draggable="false"
+              />
+              <h3 class="client-name">UBiNS</h3>
+            </li>
+            <li class="client-card">
+              <img
+                class="client-logo"
+                src="assets/clients/logo-placeholder.svg"
+                alt="Tymczasowe miejsce na logotyp: AMH"
+                width="480"
+                height="160"
+                loading="lazy"
+                draggable="false"
+              />
+              <h3 class="client-name">AMH</h3>
+            </li>
+            <li class="client-card">
+              <img
+                class="client-logo"
+                src="assets/clients/logo-placeholder.svg"
+                alt="Tymczasowe miejsce na logotyp: Tears of Joy"
+                width="480"
+                height="160"
+                loading="lazy"
+                draggable="false"
+              />
+              <h3 class="client-name">Tears of Joy</h3>
+            </li>
+            <li class="client-card">
+              <img
+                class="client-logo"
+                src="assets/clients/logo-placeholder.svg"
+                alt="Tymczasowe miejsce na logotyp: Veni Vidi Vidi"
+                width="480"
+                height="160"
+                loading="lazy"
+                draggable="false"
+              />
+              <h3 class="client-name">Veni Vidi Vidi</h3>
+            </li>
+            <li class="client-card">
+              <img
+                class="client-logo"
+                src="assets/clients/logo-placeholder.svg"
+                alt="Tymczasowe miejsce na logotyp: BSA"
+                width="480"
+                height="160"
+                loading="lazy"
+                draggable="false"
+              />
+              <h3 class="client-name">BSA</h3>
+            </li>
+            <li class="client-card">
+              <img
+                class="client-logo"
+                src="assets/clients/logo-placeholder.svg"
+                alt="Tymczasowe miejsce na logotyp: Apolloweb"
+                width="480"
+                height="160"
+                loading="lazy"
+                draggable="false"
+              />
+              <h3 class="client-name">Apolloweb</h3>
+            </li>
+          </ul>
+        </div>
+        <div class="clients-progress" aria-hidden="true"><span></span></div>
       </section>
       <section
         class="services section-frame"
@@ -717,34 +944,64 @@
         </div>
       </section>
       <section
-        class="about section-frame"
-        id="o-mnie"
-        aria-labelledby="about-title"
+        class="process section-frame"
+        id="proces"
+        aria-labelledby="process-title"
       >
-        <div class="about-art">
-          <img
-            src="assets/images/city.jpg"
-            alt="Geometryczne linie wieżowca – fotografia inspiracyjna"
-            width="1600"
-            height="1100"
-            loading="lazy"
-          /><span>Patrzę szerzej.</span>
-        </div>
-        <div class="about-copy">
-          <h2 id="about-title">Po drugiej<br />stronie projektu.</h2>
-          <p>
-            Augustynowicz. Projektowanie graficzne, doświadczenia cyfrowe i
-            marketing spotykają się tu w jednym miejscu.
-          </p>
-          <p>
-            Interesuje mnie cały obraz: jak marka wygląda, jak działa jej
-            produkt i jak dociera do ludzi. Dzięki temu każdy kolejny element
-            może wynikać z poprzedniego.
-          </p>
-          <a class="text-link" href="#kontakt"
-            >Poznajmy Twój projekt <span aria-hidden="true">↗</span></a
+        <aside class="process-aside">
+          <p>Proces</p>
+          <p>Od pierwszej rozmowy do ostatniego detalu.</p>
+        </aside>
+        <div class="process-display">
+          <svg
+            class="process-symbol"
+            viewBox="0 0 80 80"
+            fill="none"
+            aria-hidden="true"
           >
+            <path
+              d="M40 5V75M5 40H75M15 15L65 65M15 65L65 15"
+              stroke="currentColor"
+              stroke-width="5"
+            />
+          </svg>
+          <h2 id="process-title">
+            Projektuję.<br />Rozwijam.<br />Przekazuję.
+          </h2>
         </div>
+        <p class="process-intro">
+          Od Twojego pomysłu do gotowego projektu. Z jasnym zakresem, wspólnym
+          kierunkiem i miejscem na rozmowę na każdym etapie.
+        </p>
+        <ol class="process-steps" aria-label="Etapy współpracy">
+          <li class="process-step">
+            <span class="process-number" aria-hidden="true">01</span> <!-- taste-skill-ignore: numbered steps requested in the reference -->
+            <h3>Zrozumienie</h3>
+            <p>
+              Rozmawiamy o marce, odbiorcach i celu projektu. Zbieram materiały,
+              poznaję kontekst i ograniczenia. Ustalamy zakres, priorytety i
+              plan współpracy.
+            </p>
+          </li>
+          <li class="process-step">
+            <span class="process-number" aria-hidden="true">02</span> <!-- taste-skill-ignore: numbered steps requested in the reference -->
+            <h3>Projektowanie</h3>
+            <p>
+              Tworzę koncepcję i rozwijam wybrany kierunek. Pokazuję kolejne
+              wersje, zbieram uwagi i dopracowuję całość — od kompozycji po
+              szczegóły interfejsu lub druku.
+            </p>
+          </li>
+          <li class="process-step">
+            <span class="process-number" aria-hidden="true">03</span> <!-- taste-skill-ignore: numbered steps requested in the reference -->
+            <h3>Przekazanie</h3>
+            <p>
+              Przygotowuję uzgodnione pliki i materiały: projekt w Figmie,
+              grafiki cyfrowe lub pliki do druku. Omawiam sposób ich
+              wykorzystania i dalsze kroki.
+            </p>
+          </li>
+        </ol>
       </section>
     </main>
     <footer class="contact-footer" id="kontakt" aria-labelledby="contact-title">

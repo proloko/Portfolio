@@ -16,13 +16,20 @@ css/styles.css         tokeny, układy, komponenty, mobile, ruch
 css/hero.css           pierwszy ekran, typografia, ikony i układ mobilny
 css/layout.css         wspólna siatka, szerokość treści i biała sekcja intro
 css/case-study.css     układ osobnych stron case study
+css/clients.css        poziomo przewijana lista klientów
+css/editorial.css      nowe O mnie, niezależne obrazy i logotypy
+css/process.css        sekcja Proces i trzy etapy współpracy
+css/header.css         wysuwany nagłówek i rozmyta warstwa pod menu
 projekty/              statyczne podstrony Dom, Flow, Perspektywy i Orbit
 js/main.js             kontakt, menu, filtry i animacje specjalizacji
 js/hero.js             proceduralne tło WebGL i sterowanie jego odtwarzaniem
 js/theme.js            zapisany motyw ustawiany przed pierwszym renderowaniem
 js/case-study.js       motyw i pasek postępu na podstronach projektów
+js/clients.js          strzałki, gesty i przeciąganie listy klientów
 assets/fonts/          lokalny font Manrope + licencja
 assets/images/         zdjęcia demonstracyjne
+assets/projects/       osobne pliki prezentacji projektów
+assets/clients/        pliki logotypów klientów
 assets/favicon.svg     tymczasowa ikona litery a
 assets/hero-ribbon.svg zapasowe tło bez WebGL
 docs/credits.html      autorzy i licencje fotografii
@@ -61,11 +68,11 @@ Ikony Dribbble, Behance i LinkedIn są przygotowane w HTML. Bez podanych adresó
 
 ## Prezentacje realizacji
 
-Każdy `.case-study` w HTML zawiera `.case-copy` z opisem oraz `.case-media` z główną makietą i dwoma dodatkowymi materiałami. Zastępuj zawartość tych elementów własnymi obrazami. Główna makieta ma klasę `.project-visual`; prezentacja nie jest klikalna. Kategorię ustawisz w `data-category`.
+Każdy `.case-study` w HTML zawiera `.case-copy` z opisem oraz `.case-media.media-triptych` z trzema niezależnymi elementami `img`: `.fragment-top`, `.case-main` i `.fragment-bottom`. Podmień ich `src`, `alt`, `width` i `height` na własne materiały. Przykładowe grafiki znajdują się w `assets/projects/`, fotografie w `assets/images/`. Pliki SVG są samodzielne; prezentacja Perspektyw ma osadzone fotografie. Kategorię ustawisz w `data-category`. Makiety HTML na osobnych podstronach case study pozostają niezależne od tych skrótów.
 
 Materiały są wyprostowane. W `.case-main` i `.case-fragment` możesz umieszczać bezpośrednio zdjęcia lub filmy, np. `<video src="assets/video/projekt.mp4" poster="assets/images/kadr.jpg" controls playsinline></video>`. Style dopasowują media do ich ramek.
 
-Nad nazwą projektu znajduje się licznik `01 / 04`. Po filtrowaniu numeracja obejmuje wyłącznie widoczne realizacje. Dwa stałe przyciski po prawej obsługują całą trasę: pierwszy ekran → połączone intro, nagłówek realizacji i filtry → widoczne projekty → specjalizacje → „O mnie” → kontakt. Połączony blok jest jednym przystankiem. Strzałka w górę przechodzi w odwrotnej kolejności, również z pierwszego projektu do wcześniejszych sekcji. Niedostępny kierunek jest wyłączony dopiero na początku lub końcu tej trasy. Osobny margines pozostawia miejsce na przyciski.
+Nad nazwą projektu znajduje się licznik `01 / 04`. Po filtrowaniu numeracja obejmuje wyłącznie widoczne realizacje. Dwa stałe przyciski po prawej obsługują całą trasę: pierwszy ekran → „O mnie” → połączone intro, nagłówek realizacji i filtry → widoczne projekty → klienci → specjalizacje → proces → kontakt. Połączony blok jest jednym przystankiem. Strzałka w górę przechodzi w odwrotnej kolejności, również z pierwszego projektu do wcześniejszych sekcji. Niedostępny kierunek jest wyłączony dopiero na początku lub końcu tej trasy. Osobny margines pozostawia miejsce na przyciski.
 
 Realizacje mają wspólne tło zgodne z motywem i ciepły, miękki gradient w `.case-study::before`. Sceny przewijają się w zwykłym układzie dokumentu, a delikatna paralaksa dotyczy wyłącznie materiałów graficznych. Nagłówki i opisy pozostają nieruchome. Żaden skrypt nie przechwytuje przewijania kółkiem ani dotykiem.
 
@@ -78,6 +85,7 @@ Realizacje mają wspólne tło zgodne z motywem i ciepły, miękki gradient w `.
 - Otwarta specjalizacja ma żółte tło `#f5db4b` i ciemny tekst. Strzałka wskazuje dół przy zwiniętym bloku i górę po rozwinięciu.
 - Subtelne światło podąża za kursorem na urządzeniach z myszą. Warstwa jest nieklikalna, nie działa na ekranie dotykowym ani przy ograniczeniu ruchu i przestaje animować po zatrzymaniu kursora lub opuszczeniu okna.
 - Menu mobilne, widoczny fokus, odnośnik pomijający nawigację, obsługa `prefers-reduced-motion`.
+- Nagłówek pozostaje na górze ekranu, chowa się przy przewijaniu w dół i płynnie wraca przy ruchu w górę. Niewielki próg ruchu zapobiega migotaniu przy drobnych zmianach kierunku. Otwarte menu mobilne oraz fokus klawiatury utrzymują nagłówek widoczny. Rozmyta, półprzezroczysta warstwa wygasa pod menu i korzysta z palety aktywnego motywu. Napis na przycisku kontaktowym pozostaje ciemny także po najechaniu.
 - Stały przełącznik słońce/księżyc w prawym górnym rogu zmienia jasny i ciemny motyw. Jasny motyw ma białe tło `#ffffff` i znacznie subtelniejsze gradienty scen. Domyślny jest ciemny; wybór jest zapamiętywany w `localStorage` i odtwarzany przed wyświetleniem strony. Zdjęcia, makiety i żółta stopka zachowują własne kolory. Tokeny obu motywów są na początku CSS.
 - Przełącznik **Animacje** w stopce włącza lub ogranicza ruch. Domyślnie respektuje ustawienia systemowe; ręczny wybór jest zapamiętywany w `localStorage`. W obu trybach tekst pozostaje stale widoczny i nie ma animacji przesuwających tekst.
 - Bez JS treści, realizacje, obrazy i specjalizacje pozostają dostępne; filtrowanie i płynne animacje rozwijania wymagają JS.
@@ -85,5 +93,7 @@ Realizacje mają wspólne tło zgodne z motywem i ciepły, miękki gradient w `.
 Treści demonstracyjne nie stanowią deklaracji doświadczenia ani efektów biznesowych. Strona nie zawiera analityki, cookies, formularza wysyłającego dane ani zewnętrznych zależności w czasie działania.
 
 ## Pełne case study
+
+Aktualny układ „O mnie”, trzy niezależne obrazy projektów oraz podmiana logotypów: zobacz `docs/editorial-notes.md`. Tymczasowy logotyp jest wspólnym SVG; właściwe pliki PNG lub SVG podmieniaj w `src` poszczególnych `.client-logo` w `index.html`.
 
 `projekty/dom.html`, `flow.html`, `perspektywy.html` i `orbit.html` zawierają osobne prezentacje: wprowadzenie, metrykę, dużą makietę, kontekst i cel, galerię, podejście oraz zasady projektowe. Każda ma powrót do właściwej realizacji w portfolio, link do następnego projektu i kontaktu, przełącznik motywu oraz pasek postępu. Treści i materiały są lokalne, dostępne także bez JavaScript. Bez JS nie działa przełączanie motywu ani pasek postępu. Podstrony są demonstracyjne; zastąp je rzeczywistym procesem, materiałami i wynikami przed publikacją.

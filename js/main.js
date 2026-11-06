@@ -13,6 +13,51 @@ const siteConfig = {
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const menuToggle = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".navigation");
+const header = document.querySelector(".header");
+let previousHeaderY = Math.max(0, window.scrollY);
+let headerDirection = 0;
+let headerTravel = 0;
+
+/* A little travel hysteresis prevents the header flickering on small reversals. */
+function updateHeader() {
+  const maxY = Math.max(0, document.documentElement.scrollHeight - innerHeight);
+  const y = Math.max(0, Math.min(maxY, window.scrollY));
+  const delta = y - previousHeaderY;
+  previousHeaderY = y;
+  header.classList.toggle("is-at-top", y <= 16);
+  const introRect = workIntro.getBoundingClientRect();
+  const headerLine = header.offsetHeight / 2;
+  header.classList.toggle(
+    "is-over-light-intro",
+    workIntro.classList.contains("is-revealed") &&
+      introRect.top <= headerLine &&
+      introRect.bottom > headerLine,
+  );
+  const pinned =
+    menuToggle.getAttribute("aria-expanded") === "true" ||
+    !!header.querySelector(":focus-visible");
+  if (y < header.offsetHeight + 32 || pinned) {
+    header.classList.remove("is-hidden");
+    headerDirection = 0;
+    headerTravel = 0;
+    return;
+  }
+  if (!delta) return;
+  const direction = Math.sign(delta);
+  headerTravel =
+    direction === headerDirection
+      ? headerTravel + Math.abs(delta)
+      : Math.abs(delta);
+  headerDirection = direction;
+  if (headerTravel >= (direction < 0 ? 8 : 18)) {
+    header.classList.toggle("is-hidden", direction > 0);
+    headerTravel = 0;
+  }
+}
+header.addEventListener("focusin", () => {
+  header.classList.remove("is-hidden");
+  headerTravel = 0;
+});
 
 function closeMenu() {
   menuToggle.setAttribute("aria-expanded", "false");
@@ -73,9 +118,11 @@ const previousProject = document.querySelector("#previous-project");
 const nextProject = document.querySelector("#next-project");
 let navigationTarget = null;
 let currentStopIndex = 0;
-const precedingSections = [...document.querySelectorAll(".hero, .work-intro")];
+const precedingSections = [
+  ...document.querySelectorAll(".hero, #o-mnie, .work-intro"),
+];
 const followingSections = [
-  ...document.querySelectorAll("#specjalizacje, #o-mnie, #kontakt"),
+  ...document.querySelectorAll("#klienci, #specjalizacje, #proces, #kontakt"),
 ];
 
 function navigationStops(visible) {
@@ -337,6 +384,7 @@ function updateScenes() {
   frameRequested = false;
   const height = window.innerHeight;
   updateWorkIntro(height);
+  updateHeader();
   const desktop = window.innerWidth > 800;
   const visible = projectCards.filter((card) => !card.hidden);
   updateProjectNavigation(visible);
@@ -354,15 +402,6 @@ function updateScenes() {
       piece.style.setProperty("--parallax-y", distance.toFixed(2) + "px");
     });
   });
-  const aboutImage = document.querySelector(".about-art img");
-  const aboutBox = aboutImage.parentElement.getBoundingClientRect();
-  const aboutProgress = Math.max(
-    -1,
-    Math.min(1, (height / 2 - aboutBox.top) / height),
-  );
-  aboutImage.style.transform = motionEnabled
-    ? "scale(1.1) translateY(" + aboutProgress * 18 + "px)"
-    : "none";
 }
 window.addEventListener("scroll", requestSceneUpdate, { passive: true });
 window.addEventListener("resize", requestSceneUpdate, { passive: true });
