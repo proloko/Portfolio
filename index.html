@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111211" />
+    <meta
+      name="description"
+      content="Augustynowicz – projektowanie graficzne, UX/UI, aplikacje webowe i mobilne, DTP i Growth Marketing."
+    />
+    <title>Augustynowicz – Design & digital</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/fonts/manrope-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+    <header class="header">
+      <a
+        class="wordmark"
+        href="#top"
+        aria-label="Augustynowicz – początek strony"
+        >augustynowicz<span aria-hidden="true">.</span></a
+      >
+      <button
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="navigation"
+      >
+        Menu <span aria-hidden="true">+</span>
+      </button>
+      <nav class="navigation" id="navigation" aria-label="Główna nawigacja">
+        <a href="#projekty">Projekty</a>
+        <a href="#specjalizacje">Co robię</a>
+        <a href="#o-mnie">O mnie</a>
+        <a class="nav-contact" href="#kontakt"
+          >Porozmawiajmy <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+
+    <button
+      class="theme-toggle"
+      type="button"
+      role="switch"
+      aria-checked="false"
+      aria-label="Tryb jasny"
+      title="Włącz tryb jasny"
+    >
+      <span class="theme-toggle-knob" aria-hidden="true"></span>
+      <svg
+        class="theme-sun"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+      >
+        <circle cx="12" cy="12" r="4" />
+        <path
+          d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+        />
+      </svg>
+      <svg
+        class="theme-moon"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M20 15.2A8.5 8.5 0 0 1 8.8 4 8.5 8.5 0 1 0 20 15.2Z" />
+      </svg>
+    </button>
+    <div class="cursor-light" aria-hidden="true"></div>
+    <nav class="project-navigation" aria-label="Nawigacja po stronie" hidden>
+      <button
+        type="button"
+        id="previous-project"
+        aria-label="Poprzedni projekt"
+        title="Poprzedni projekt"
+        disabled
+      >
+        <span aria-hidden="true">↑</span>
+      </button>
+      <button
+        type="button"
+        id="next-project"
+        aria-label="Następny projekt"
+        title="Następny projekt"
+        disabled
+      >
+        <span aria-hidden="true">↓</span>
+      </button>
+    </nav>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <!-- Replace this photograph with your own. -->
+        <div class="hero-background" aria-hidden="true">
+          <img
+            src="assets/images/hero.jpg"
+            alt=""
+            width="1600"
+            height="1100"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content section-frame">
+          <h1 id="hero-title">
+            <span class="line-mask"><span>Design z myślą</span></span
+            ><span class="line-mask"><span>o efekcie.</span></span>
+          </h1>
+          <div class="hero-bottom">
+            <p>
+              Projektowanie graficzne, UX/UI i marketing.<br />Od pierwszego
+              pomysłu po ostatni detal.
+            </p>
+            <a class="button" href="#projekty"
+              >Zobacz projekty <span aria-hidden="true">↓</span></a
+            >
+          </div>
+          <div class="hero-caption">
+            <p>Grafika / UX/UI / DTP / Web & Mobile / Growth</p>
+            <span>Portfolio w przygotowaniu · projekty demo</span>
+          </div>
+        </div>
+      </section>
+      <section class="intro section-frame" aria-labelledby="intro-title">
+        <h2 id="intro-title" class="intro-title">Pomysł to początek.</h2>
+        <p class="intro-statement">
+          Projektuję spójne doświadczenia: od identyfikacji marki, przez
+          interfejs, po komunikację, która prowadzi do działania.
+        </p>
+      </section>
+      <section class="work" id="projekty" aria-labelledby="work-title">
+        <div class="work-header section-frame">
+          <div class="section-heading">
+            <h2 id="work-title">Wybrane<br />realizacje.</h2>
+            <p>Wybrane kierunki projektowe.<br />Koncepcje demonstracyjne.</p>
+          </div>
+          <div class="work-toolbar">
+            <div class="filters" role="group" aria-label="Filtruj projekty">
+              <button
+                class="filter is-active"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                Wszystko</button
+              ><button class="filter" data-filter="ux" aria-pressed="false">
+                UX/UI</button
+              ><button
+                class="filter"
+                data-filter="branding"
+                aria-pressed="false"
+              >
+                Branding</button
+              ><button class="filter" data-filter="dtp" aria-pressed="false">
+                DTP</button
+              ><button class="filter" data-filter="growth" aria-pressed="false">
+                Growth
+              </button>
+            </div>
+            <p class="gallery-status" id="filter-status" aria-live="polite">
+              4 projekty demonstracyjne
+            </p>
+          </div>
+        </div>
+        <div class="case-list">
+          <article
+            class="case-study case-forma"
+            data-category="branding"
+            id="projekt-forma"
+            aria-labelledby="title-forma"
+          >
+            <div class="case-inner section-frame">
+              <div class="case-copy">
+                <!-- prettier-ignore -->
+                <p class="project-number" aria-label="Projekt 1 z 4">
+                  <span data-project-index>01</span> <!-- taste-skill-ignore: user-requested project counter -->
+                  <span aria-hidden="true">/</span>
+                  <span data-project-total>04</span> <!-- taste-skill-ignore: user-requested project counter -->
+                </p>
+                <h3 id="title-forma">Forma</h3>
+                <p class="case-subtitle">
+                  Identyfikacja wizualna studia projektowego
+                </p>
+                <div class="case-feature">
+                  <strong>Marka</strong>
+                  <p>Jeden język.<br />W każdym formacie.</p>
+                </div>
+                <p class="case-description">
+                  Od pomysłu na markę po jej codzienną komunikację. Typografia,
+                  kolor i prosty system graficzny, który działa na wizytówce, w
+                  social mediach i na stronie.
+                </p>
+                <ul class="case-tags" aria-label="Zakres projektu">
+                  <li>Strategia marki</li>
+                  <li>Identyfikacja</li>
+                  <li>Digital</li>
+                  <li>Druk</li>
+                </ul>
+              </div>
+              <div class="case-media" aria-label="Materiały projektu Forma">
+                <div class="case-fragment fragment-top" data-parallax="0.55">
+                  <span class="fragment-forma-photo"
+                    ><img
+                      src="assets/images/architecture.jpg"
+                      alt="Architektura w demonstracyjnej komunikacji marki Forma"
+                      width="1600"
+                      height="1100"
+                      loading="lazy"
+                  /></span>
+                </div>
+                <div class="case-main" data-parallax="-0.25">
+                  <div
+                    class="project-visual project-forma"
+                    role="img"
+                    aria-label="Makieta projektu Forma – identyfikacja wizualna"
+                  >
+                    <span class="forma-poster"
+                      ><strong>forma®</strong
+                      ><span>Dobrze się składa.</span></span
+                    ><span class="forma-card"
+                      ><strong>f.</strong
+                      ><span>Przestrzeń dla pomysłów.</span></span
+                    >
+                  </div>
+                </div>
+                <div class="case-fragment fragment-bottom" data-parallax="0.85">
+                  <span class="fragment-forma-card"
+                    ><b>f.</b><span>Przestrzeń<br />dla pomysłów.</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </article>
+          <article
+            class="case-study case-flow"
+            data-category="ux"
+            id="projekt-flow"
+            aria-labelledby="title-flow"
+          >
+            <div class="case-inner section-frame">
+              <div class="case-copy">
+                <!-- prettier-ignore -->
+                <p class="project-number" aria-label="Projekt 2 z 4">
+                  <span data-project-index>02</span> <!-- taste-skill-ignore: user-requested project counter -->
+                  <span aria-hidden="true">/</span>
+                  <span data-project-total>04</span> <!-- taste-skill-ignore: user-requested project counter -->
+                </p>
+                <h3 id="title-flow">Flow</h3>
+                <p class="case-subtitle">UX/UI aplikacji mobilnej</p>
+                <div class="case-feature">
+                  <strong>Mobile</strong>
+                  <p>Mniej chaosu.<br />Więcej dobrego rytmu.</p>
+                </div>
+                <p class="case-description">
+                  Koncepcja produktu, który pomaga budować codzienne nawyki.
+                  Przemyślana ścieżka, czytelny postęp i interfejs skupiony na
+                  jednym kolejnym kroku.
+                </p>
+                <ul class="case-tags" aria-label="Zakres projektu">
+                  <li>User flow</li>
+                  <li>UX/UI</li>
+                  <li>Design system</li>
+                  <li>Prototyp</li>
+                </ul>
+              </div>
+              <div class="case-media" aria-label="Materiały projektu Flow">
+                <div class="case-fragment fragment-top" data-parallax="0.55">
+                  <span class="fragment-flow-day" data-ui
+                    ><span>Twój tydzień</span><strong>Dobry rytm.</strong
+                    ><span class="week-days"
+                      ><i>P</i><i>W</i><i>Ś</i><i>C</i><i>P</i></span
+                    ><span>Małe kroki, każdego dnia.</span></span
+                  >
+                </div>
+                <div class="case-main" data-parallax="-0.25">
+                  <div
+                    class="project-visual project-flow"
+                    role="img"
+                    aria-label="Makieta projektu Flow – UX/UI aplikacji mobilnej"
+                    data-ui
+                  >
+                    <span class="flow-interface" aria-hidden="true"
+                      ><span class="phone-top">flow <span>•</span></span
+                      ><span class="phone-heading"
+                        >Małe kroki.<br />Duża zmiana.</span
+                      ><span class="flow-circle"
+                        >7<span>dni dla siebie</span></span
+                      ><span class="flow-task"
+                        >Twój następny krok <b>→</b></span
+                      ></span
+                    >
+                  </div>
+                </div>
+                <div class="case-fragment fragment-bottom" data-parallax="0.85">
+                  <span class="fragment-flow-goal" data-ui
+                    ><span>Chwila dla siebie</span><b>20 min</b
+                    ><span>Twój dzisiejszy cel</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </article>
+          <article
+            class="case-study case-perspektywy"
+            data-category="dtp"
+            id="projekt-perspektywy"
+            aria-labelledby="title-perspektywy"
+          >
+            <div class="case-inner section-frame">
+              <div class="case-copy">
+                <!-- prettier-ignore -->
+                <p class="project-number" aria-label="Projekt 3 z 4">
+                  <span data-project-index>03</span> <!-- taste-skill-ignore: user-requested project counter -->
+                  <span aria-hidden="true">/</span>
+                  <span data-project-total>04</span> <!-- taste-skill-ignore: user-requested project counter -->
+                </p>
+                <h3 id="title-perspektywy">Perspektywy</h3>
+                <p class="case-subtitle">Magazyn o architekturze i kulturze</p>
+                <div class="case-feature">
+                  <strong>Editorial</strong>
+                  <p>Rytm publikacji.<br />Przestrzeń na treść.</p>
+                </div>
+                <p class="case-description">
+                  Projekt wydawnictwa od okładki po ostatnią stronę. Fotografia,
+                  odważny kadr i konsekwentna siatka składu prowadzą czytelnika
+                  przez dłuższe historie.
+                </p>
+                <ul class="case-tags" aria-label="Zakres projektu">
+                  <li>Art direction</li>
+                  <li>Layout</li>
+                  <li>Typografia</li>
+                  <li>DTP</li>
+                </ul>
+              </div>
+              <div
+                class="case-media"
+                aria-label="Materiały projektu Perspektywy"
+              >
+                <div class="case-fragment fragment-top" data-parallax="0.55">
+                  <img
+                    src="assets/images/windows.jpg"
+                    alt="Fotografia otwierająca przykładowy artykuł"
+                    width="1600"
+                    height="1100"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="case-main" data-parallax="-0.25">
+                  <div
+                    class="project-visual project-perspectives"
+                    role="img"
+                    aria-label="Makieta projektu Perspektywy – projekt magazynu"
+                  >
+                    <span class="magazine"
+                      ><img
+                        src="assets/images/concrete.jpg"
+                        alt="Spiralne betonowe schody w przykładowym magazynie"
+                        width="1600"
+                        height="1100"
+                        loading="lazy"
+                      /><strong>perspektywy</strong
+                      ><span>Architektura / Kultura / Ludzie</span></span
+                    ><span class="magazine-back"
+                      ><img
+                        src="assets/images/windows.jpg"
+                        alt="Sylwetki przy panoramicznych oknach"
+                        width="1600"
+                        height="1100"
+                        loading="lazy"
+                    /></span>
+                  </div>
+                </div>
+                <div class="case-fragment fragment-bottom" data-parallax="0.85">
+                  <span class="fragment-editorial"
+                    ><b>Inny<br />kadr.</b><span>perspektywy</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </article>
+          <article
+            class="case-study case-orbit"
+            data-category="growth ux"
+            id="projekt-orbit"
+            aria-labelledby="title-orbit"
+          >
+            <div class="case-inner section-frame">
+              <div class="case-copy">
+                <!-- prettier-ignore -->
+                <p class="project-number" aria-label="Projekt 4 z 4">
+                  <span data-project-index>04</span> <!-- taste-skill-ignore: user-requested project counter -->
+                  <span aria-hidden="true">/</span>
+                  <span data-project-total>04</span> <!-- taste-skill-ignore: user-requested project counter -->
+                </p>
+                <h3 id="title-orbit">Orbit</h3>
+                <p class="case-subtitle">
+                  Strona produktu i komunikacja kampanii
+                </p>
+                <div class="case-feature">
+                  <strong>Growth</strong>
+                  <p>Czytelna obietnica.<br />Konkretny następny krok.</p>
+                </div>
+                <p class="case-description">
+                  Landing page i system kreacji zbudowane wokół jednego celu.
+                  Wyrazista komunikacja, prezentacja produktu i warianty gotowe
+                  do kolejnych testów.
+                </p>
+                <ul class="case-tags" aria-label="Zakres projektu">
+                  <li>Landing page</li>
+                  <li>Web UI</li>
+                  <li>Kampania</li>
+                  <li>Testy A/B</li>
+                </ul>
+              </div>
+              <div class="case-media" aria-label="Materiały projektu Orbit">
+                <div class="case-fragment fragment-top" data-parallax="0.55">
+                  <span class="fragment-orbit-ad"
+                    ><b>Na<br />orbitę.</b><span>orbit ↗</span></span
+                  >
+                </div>
+                <div class="case-main" data-parallax="-0.25">
+                  <div
+                    class="project-visual project-orbit"
+                    role="img"
+                    aria-label="Makieta projektu Orbit – landing page i kampania"
+                    data-ui
+                  >
+                    <span class="browser-window" aria-hidden="true"
+                      ><span class="browser-bar"
+                        ><b>orbit</b
+                        ><span>Produkt　Możliwości　Zacznij</span></span
+                      ><span class="browser-content"
+                        ><strong>Mniej klikania.<br />Więcej działania.</strong
+                        ><span>Twoje pomysły. Jeden wspólny kierunek.</span
+                        ><span class="mini-button">Zacznij teraz ↗</span></span
+                      ><span class="orbit-art">o.</span></span
+                    >
+                  </div>
+                </div>
+                <div class="case-fragment fragment-bottom" data-parallax="0.85">
+                  <span class="fragment-orbit-mobile" data-ui
+                    ><b>orbit</b><strong>Jeden<br />kierunek.</strong
+                    ><span>Zacznij teraz ↗</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section
+        class="services section-frame"
+        id="specjalizacje"
+        aria-labelledby="services-title"
+      >
+        <div class="section-heading">
+          <h2 id="services-title">Od marki do aplikacji.</h2>
+          <p>Różne formaty.<br />Jeden spójny kierunek.</p>
+        </div>
+        <div class="service-list">
+          <details name="specializations" open>
+            <summary>
+              <h3 data-title="Projektowanie graficzne">
+                <span>Projektowanie graficzne</span>
+              </h3>
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="service-body">
+              <div class="service-detail">
+                <p>
+                  Identyfikacja wizualna, systemy graficzne i materiały, które
+                  budują rozpoznawalność. Wspólny język dla wszystkich punktów
+                  styku z marką.
+                </p>
+                <p>Branding · Key visual · Social media</p>
+              </div>
+            </div>
+          </details>
+          <details name="specializations">
+            <summary>
+              <h3 data-title="UX/UI & digital"><span>UX/UI & digital</span></h3>
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="service-body">
+              <div class="service-detail">
+                <p>
+                  Architektura informacji, ścieżki użytkownika, makiety i gotowe
+                  interfejsy. Projektowanie stron, platform i produktów
+                  cyfrowych z uwagą na użyteczność.
+                </p>
+                <p>Research · Prototypy · Design system</p>
+              </div>
+            </div>
+          </details>
+          <details name="specializations">
+            <summary>
+              <h3 data-title="Aplikacje web & mobile">
+                <span>Aplikacje web & mobile</span>
+              </h3>
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="service-body">
+              <div class="service-detail">
+                <p>
+                  Doświadczenia dopasowane do ekranu i kontekstu. Od pierwszego
+                  onboardingu po codzienne zadania, z kompletem stanów i widoków
+                  dla zespołu developerskiego.
+                </p>
+                <p>Web app · iOS & Android · Handoff</p>
+              </div>
+            </div>
+          </details>
+          <details name="specializations">
+            <summary>
+              <h3 data-title="DTP & publikacje">
+                <span>DTP & publikacje</span>
+              </h3>
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="service-body">
+              <div class="service-detail">
+                <p>
+                  Skład katalogów, magazynów, raportów i materiałów reklamowych.
+                  Typografia, hierarchia informacji i przygotowanie plików do
+                  produkcji.
+                </p>
+                <p>Editorial · Katalogi · Przygotowanie do druku</p>
+              </div>
+            </div>
+          </details>
+          <details name="specializations">
+            <summary>
+              <h3 data-title="Growth Marketing">
+                <span>Growth Marketing</span>
+              </h3>
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="service-body">
+              <div class="service-detail">
+                <p>
+                  Projektowanie kreacji i landing pages wokół konkretnego celu.
+                  Warianty do testów, komunikacja kampanii i kolejne iteracje
+                  oparte na danych.
+                </p>
+                <p>Landing pages · Kreacje reklamowe · Testy A/B</p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section
+        class="about section-frame"
+        id="o-mnie"
+        aria-labelledby="about-title"
+      >
+        <div class="about-art">
+          <img
+            src="assets/images/city.jpg"
+            alt="Geometryczne linie wieżowca – fotografia inspiracyjna"
+            width="1600"
+            height="1100"
+            loading="lazy"
+          /><span>Patrzę szerzej.</span>
+        </div>
+        <div class="about-copy">
+          <h2 id="about-title">Po drugiej<br />stronie projektu.</h2>
+          <p>
+            Augustynowicz. Projektowanie graficzne, doświadczenia cyfrowe i
+            marketing spotykają się tu w jednym miejscu.
+          </p>
+          <p>
+            Interesuje mnie cały obraz: jak marka wygląda, jak działa jej
+            produkt i jak dociera do ludzi. Dzięki temu każdy kolejny element
+            może wynikać z poprzedniego.
+          </p>
+          <a class="text-link" href="#kontakt"
+            >Poznajmy Twój projekt <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+    </main>
+    <footer
+      class="contact-footer section-frame"
+      id="kontakt"
+      aria-labelledby="contact-title"
+    >
+      <div class="footer-top">
+        <p>Masz pomysł na kolejny projekt?</p>
+        <button
+          class="motion-toggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Włącz pełne animacje"
+        >
+          Animacje <span>Włącz</span>
+        </button>
+      </div>
+      <h2 id="contact-title" class="footer-title">Pogadamy?</h2>
+      <div class="footer-contact">
+        <p class="footer-intro">
+          Marka, aplikacja, publikacja czy kampania? Opowiedz, co chcesz
+          stworzyć. Znajdźmy dla tego dobry kierunek.
+        </p>
+        <dl class="contact-rows" id="contact-details">
+          <div>
+            <dt>E-mail</dt>
+            <dd data-contact="email">Adres wkrótce</dd>
+          </div>
+          <div>
+            <dt>Telefon</dt>
+            <dd data-contact="phone">Numer wkrótce</dd>
+          </div>
+          <div>
+            <dt>Social</dt>
+            <dd data-contact="social">Profile wkrótce</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="footer-bottom">
+        <a class="wordmark" href="#top">augustynowicz.</a>
+        <p>© <span id="year">2026</span> Augustynowicz</p>
+        <a href="#top">Do góry ↑</a>
+      </div>
+    </footer>
+    <div class="credits section-frame">
+      <p>
+        Projekty Forma, Flow, Perspektywy i Orbit to koncepcje demo. Fotografie
+        inspiracyjne:
+        <a
+          href="https://unsplash.com/license"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Unsplash License</a
+        >, przez Lorem Picsum. <a href="docs/credits.html">Autorzy zdjęć</a>.
+      </p>
+    </div>
+  </body>
+</html>
