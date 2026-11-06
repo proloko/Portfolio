@@ -1,7 +1,3 @@
-# Augustynowicz — portfolio
-
-Statyczne portfolio inspirowane sposobem prezentowania realizacji na https://garlak.pl/. Własny układ i kod; bez kopiowania treści, kodu ani materiałów referencji. Bez CMS, frameworka, instalowania paczek i procesu budowania.
-
 ## Uruchomienie
 
 Otwórz `index.html` w aktualnej przeglądarce. Wszystkie fonty, style, skrypty i obrazy są lokalne; strona działa również offline. Opcjonalny podgląd HTTP (wymagany Node.js):
